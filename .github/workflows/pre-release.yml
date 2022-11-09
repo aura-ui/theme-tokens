@@ -1,23 +1,23 @@
-name: "pre-release"
+name: 'pre-release'
 
 on:
   push:
     branches:
-      - "main"
+      - 'main'
 
 jobs:
   pre-release:
-    name: "Pre Release"
-    runs-on: "ubuntu-latest"
+    name: 'Pre Release'
+    runs-on: 'ubuntu-latest'
 
     steps:
       - uses: actions/checkout@v2
-      - name: "Create Pre-release"
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - name: 'Create Pre-release'
+        uses: 'marvinpinto/action-automatic-releases@latest'
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          automatic_release_tag: 'latest'
           prerelease: true
-          title: "Development Build"
+          title: 'Development Build'
           files: |
             *.json
